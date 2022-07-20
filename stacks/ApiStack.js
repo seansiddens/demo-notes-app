@@ -28,6 +28,8 @@ export function ApiStack({ stack, app }) {
             "GET /notes": "functions/list.main",
             // Update a note.
             "PUT /notes/{id}": "functions/update.main",
+            // Delete a note.
+            "DELETE /notes/{id}": "functions/delete.main",
             "GET /hello": "functions/hello.main",
         },
     });
