@@ -12,7 +12,7 @@ export const main = handler(async (event) => {
         TableName: process.env.TABLE_NAME,
         Item: {
             // The attributes of the item to be created.
-            userId: "123", // The ID of the author.
+            userId: event.requestContext.authorizer.iam.cognitoIdentity.identityId, // The ID of the author.
             noteId: uuid.v1(), // A unique UUID.
             content: data.content, // Parsed from request body.
             attachment: data.attachment, // Parsed from request body (filename of file uploaded to S3 bucket).
