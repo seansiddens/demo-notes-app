@@ -18,7 +18,10 @@ export default function Login() {
         event.preventDefault();
 
         try {
+            // Attempt to sign in w/ the inputted credentials.
             await Auth.signIn(email, password);
+
+            // Set state if it was successful.
             userHasAuthenticated(true);
         } catch (e) {
             alert(e.message);
