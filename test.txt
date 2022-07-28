@@ -1,0 +1,12 @@
+npx aws-api-gateway-cli-test \
+--username='admin@example.com' \
+--password='Password!12' \
+--user-pool-id='us-west-1_wKZYAWQow' \
+--app-client-id='18hqld3jphmjt9j86vkh6vhplv' \
+--cognito-region='us-west-1' \
+--identity-pool-id='us-west-1:ebf0155f-746e-487c-b0d6-8833939b1808' \
+--invoke-url='https://vham3s9768.execute-api.us-west-1.amazonaws.com' \
+--api-gateway-region='us-west-1' \
+--path-template='/notes' \
+--method='POST' \
+--body='{"content":"hello world","attachment":"hello.jpg"}'
