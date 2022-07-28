@@ -8,10 +8,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Amplify } from 'aws-amplify';
 import config from "./config";
 
-
+// Configure what AWS resources we want to interact with.
 Amplify.configure({
   Auth: {
-    mandatorySignIn: true,
+    mandatorySignIn: true, // Want users to be signed in before they can interact with the app.
     region: config.cognito.REGION,
     userPoolId: config.cognito.USER_POOL_ID,
     identityPoolId: config.cognito.IDENTITY_POOL_ID,
