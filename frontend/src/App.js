@@ -6,11 +6,15 @@ import Nav from "react-bootstrap/Nav";
 import { LinkContainer } from "react-router-bootstrap";
 import { AppContext } from "./lib/contextLib";
 import { Auth } from "aws-amplify";
+import { useNavigate } from "react-router-dom";
+import { onError } from "./lib/errorLib";
 
 function App() {
   // State variables.
+  const nav = useNavigate();
   const [isAuthenticating, setIsAuthenticating] = useState(true);
   const [isAuthenticated, userHasAuthenticated] = useState(false);
+
 
   // Load the user session.
   useEffect(() => {
@@ -23,9 +27,10 @@ function App() {
     try {
       await Auth.currentSession();
       userHasAuthenticated(true);
+
     } catch (e) {
-      if (e != "No current user") {
-        alert(e);
+      if (e !== "No current user") {
+        onError(e);
       }
     }
 
@@ -35,6 +40,8 @@ function App() {
   async function handleLogout() {
     await Auth.signOut();
     userHasAuthenticated(false);
+    // Navigate to login page on logout.
+    nav("/login");
   }
 
   return (
