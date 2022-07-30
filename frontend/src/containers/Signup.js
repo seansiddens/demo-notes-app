@@ -41,7 +41,7 @@ export default function Signup() {
         It forces them to create a new account instead. We are keeping things intentionally simple but here are a couple of hints on how to fix it.
             - Check for the UsernameExistsException in the handleSubmit function’s catch block.
             - Use the Auth.resendSignUp() method to resend the code if the user has not been previously confirmed. Here is a link to the Amplify API docs.
-             - Confirm the code just as we did before.
+            - Confirm the code just as we did before.
         */
         event.preventDefault();
         setIsLoading(true);

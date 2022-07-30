@@ -10,3 +10,10 @@ npx aws-api-gateway-cli-test \
 --path-template='/notes' \
 --method='POST' \
 --body='{"content":"hello world","attachment":"hello.jpg"}'
+
+
+Manually confirm an un-authenticated user:
+aws cognito-idp admin-confirm-sign-up \
+   --region COGNITO_REGION \
+   --user-pool-id USER_POOL_ID \
+   --username YOUR_USER_EMAIL
