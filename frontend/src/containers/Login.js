@@ -3,7 +3,6 @@ import Form from "react-bootstrap/Form";
 import { Auth } from "aws-amplify";
 import LoaderButton from "../components/LoaderButton";
 import { useAppContext } from "../lib/contextLib";
-import { useNavigate } from "react-router-dom";
 import { useFormFields } from "../lib/hooksLib";
 import { onError } from "../lib/errorLib";
 import "./Login.css";
@@ -33,7 +32,6 @@ export default function Login() {
 
             // Set state if it was successful.
             userHasAuthenticated(true);
-
         } catch (e) {
             onError(e);
             setIsLoading(false);

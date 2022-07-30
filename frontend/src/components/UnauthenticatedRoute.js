@@ -21,6 +21,7 @@ export default function UnauthenticatedRoute(props) {
     const redirect = querystring("redirect");
 
     if (isAuthenticated) {
+        // If user is logged in they will be redirected or sent to homepage.
         return <Navigate to={redirect || "/"} />;
     }
 
