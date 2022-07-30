@@ -9,7 +9,6 @@ import { onError } from "../lib/errorLib";
 import "./Login.css";
 
 export default function Login() {
-    const nav = useNavigate();
 
     // State variables.
     const [isLoading, setIsLoading] = useState(false);
@@ -35,8 +34,6 @@ export default function Login() {
             // Set state if it was successful.
             userHasAuthenticated(true);
 
-            // Redirect to homepage on login.
-            nav("/");
         } catch (e) {
             onError(e);
             setIsLoading(false);
