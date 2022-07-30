@@ -1,3 +1,4 @@
+// Used by Amplify.
 const config = {
     // Backend config
     s3: {

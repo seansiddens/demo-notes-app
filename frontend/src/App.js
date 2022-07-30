@@ -15,7 +15,6 @@ function App() {
   const [isAuthenticating, setIsAuthenticating] = useState(true);
   const [isAuthenticated, userHasAuthenticated] = useState(false);
 
-
   // Load the user session.
   useEffect(() => {
     onLoad(); // Since we passed an empty list, function will only be called on FIRST render.
